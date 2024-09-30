@@ -6,8 +6,8 @@ function formatMessage(message, maxLength) {
     }
 }
 
-const resultsContainer = document.getElementById("task2-result");
-resultsContainer.innerHTML = `
+const task2ResultsContainer = document.getElementById("task2-result");
+task2ResultsContainer.innerHTML = `
     <p>${formatMessage("Curabitur ligula sapien", 16)}</p>
     <p>${formatMessage("Curabitur ligula sapien", 23)}</p>
     <p>${formatMessage("Vestibulum facilisis purus nec", 20)}</p>
