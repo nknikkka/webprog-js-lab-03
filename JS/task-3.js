@@ -6,11 +6,19 @@ function checkForSpam(message) {
     return lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale");
 }
 
-// Вивід результатів перевірки на консоль
-console.log(checkForSpam("Latest technology news")); // false
-console.log(checkForSpam("JavaScript weekly newsletter")); // false
-console.log(checkForSpam("Get best sale offers now!")); // true
-console.log(checkForSpam("Amazing SalE, only tonight!")); // true
-console.log(checkForSpam("Trust me, this is not a spam message")); // true
-console.log(checkForSpam("Get rid of sPaM emails. Our book is on sale!")); // true
-console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+// Вивід результатів перевірки на сторінку
+const results = [
+    checkForSpam("Latest technology news"), // false
+    checkForSpam("JavaScript weekly newsletter"), // false
+    checkForSpam("Get best sale offers now!"), // true
+    checkForSpam("Amazing SalE, only tonight!"), // true
+    checkForSpam("Trust me, this is not a spam message"), // true
+    checkForSpam("Get rid of sPaM emails. Our book is on sale!"), // true
+    checkForSpam("[SPAM] How to earn fast money?") // true
+];
+
+// Виводимо результати в HTML
+const task3ResultDiv = document.getElementById('task3-result');
+results.forEach((result, index) => {
+    task3ResultDiv.innerHTML += `Test ${index + 1}: ${result}<br>`;
+});
