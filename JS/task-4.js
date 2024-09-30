@@ -1,4 +1,3 @@
-// Оголошення функції getShippingCost
 function getShippingCost(country) {
     let price;
 
@@ -22,7 +21,6 @@ function getShippingCost(country) {
     return `Shipping to ${country} will cost ${price} credits`;
 }
 
-// Вивід результатів на веб-сторінку
 const resultsContainer = document.getElementById("task4-result");
 resultsContainer.innerHTML = `
     <p>${getShippingCost("Australia")}</p>
