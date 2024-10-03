@@ -1,17 +1,19 @@
-function formatMessage(message, maxLength) {
-    if (message.length <= maxLength) {
-        return message; 
+// Функція перевірки, чи збігаються паролі
+function checkPassword(password, confirmPassword) {
+    if (password === confirmPassword) {
+        return "Passwords match";
     } else {
-        return message.slice(0, maxLength) + "..."; 
+        return "Passwords do not match";
     }
 }
 
-const task2ResultsContainer = document.getElementById("task2-result");
-task2ResultsContainer.innerHTML = `
-    <p>${formatMessage("Curabitur ligula sapien", 16)}</p>
-    <p>${formatMessage("Curabitur ligula sapien", 23)}</p>
-    <p>${formatMessage("Vestibulum facilisis purus nec", 20)}</p>
-    <p>${formatMessage("Vestibulum facilisis purus nec", 30)}</p>
-    <p>${formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)}</p>
-    <p>${formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)}</p>
+// Знаходимо контейнер для виводу результатів на веб-сторінку
+const passwordCheckContainer = document.getElementById("password-check-container");
+
+// Створюємо приклади перевірки паролів та виводимо їх на сторінку
+passwordCheckContainer.innerHTML = `
+    <p>${checkPassword("f8G7cB2d", "f8G7cB2d")}</p>
+    <p>${checkPassword("A9c7J3m2K5pR", "A9c7J3m2")}</p>
+    <p>${checkPassword("abc123", "abc123")}</p>
+    <p>${checkPassword("12345678", "87654321")}</p>
 `;
